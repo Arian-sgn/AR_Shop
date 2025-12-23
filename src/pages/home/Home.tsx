@@ -2,7 +2,9 @@ import React from "react";
 
 function Home() {
   return (
-    <div >خانه های زیبا و بزرگ</div>
+    <div>
+      <h1></h1>
+    </div>
   );
 }
 
