@@ -4,10 +4,6 @@ import Products from "../../components/products/Products";
 import { Link } from "react-router-dom";
 import { getProducts } from "../../services/api";
 import type { mpt } from "../../types/Types";
-import { useCart } from "../../shopping cart context/useCart";
-
-const {itemsInCart,setItemsInCart} = useCart();
-
 
 
 function Store() {

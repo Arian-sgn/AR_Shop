@@ -12,7 +12,6 @@ function ProductInCart() {
           <p className="text-xl font-medium mt-3">عنوان محصول</p>
         </div>
 
-        {/* کنترل‌ها */}
         <div className="flex flex-row-reverse items-center mr-20 gap-4">
           <button className="text-green-600 text-2xl px-3 py-1 border border-green-300 rounded-lg hover:bg-green-50 transition">
             +

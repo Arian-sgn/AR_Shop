@@ -8,6 +8,7 @@ export interface itemInCart {
 export interface cartContextType {
   itemsInCart: itemInCart[];
   setItemsInCart: React.Dispatch<React.SetStateAction<itemInCart[]>>;
+  IncreaseItemQTY : (id:number) => void
 }
 
 export const cartContext = createContext<cartContextType | undefined>(undefined);

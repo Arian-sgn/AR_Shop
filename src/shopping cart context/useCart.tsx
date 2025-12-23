@@ -6,7 +6,7 @@ export const useCart = () => {
   const context = useContext(cartContext);
 
   if (!context) {
-    throw new Error("useCart باید داخل <CartProvider> استفاده شود.");
+    throw new Error("...Error...");
   }
 
   return context;

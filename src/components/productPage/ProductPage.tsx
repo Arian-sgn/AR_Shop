@@ -4,8 +4,12 @@ import Container from "../Container";
 import Button from "../button/Button";
 import type { mpt } from "../../types/Types";
 import { getProduct } from "../../services/api";
+import { useCart } from "../../shopping cart context/useCart";
+
 
 function ProductPage() {
+  const {IncreaseItemQTY, itemsInCart} = useCart();
+
   const params = useParams<{ id: string }>();
   const [prd, setPrd] = useState<mpt>();
 
@@ -26,6 +30,7 @@ function ProductPage() {
       </Container>
     );
   }
+  console.log(itemsInCart);
 
   return (
     <Container>
@@ -56,7 +61,7 @@ function ProductPage() {
                 </span>
               </div>
 
-              <Button className="mt-4 w-full">افزودن به سبد خرید</Button>
+              <Button onClick={()=>IncreaseItemQTY(parseInt(params.id as string))} className="mt-4 w-full">افزودن به سبد خرید</Button>
             </aside>
 
             <article className="col-span-12 sm:col-span-8 lg:col-span-9 rounded-xl border border-gray-200 bg-white p-4 shadow-md text-sm leading-relaxed text-gray-700">
