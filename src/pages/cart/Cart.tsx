@@ -1,9 +1,17 @@
 import ProductInCart from "../../components/productInCart/ProductInCart";
+import { useCart } from "../../shopping cart context/useCart";
 
 function Cart() {
+
+  const {itemsInCart} = useCart();
+
   return (
     <div className="mt-8">
-      <ProductInCart />
+      {
+        itemsInCart.map((item) => (
+            <ProductInCart {...item}/>
+        ))
+      }
 
       <div className="border border-gray-300 shadow-md rounded-xl p-8 mx-5 my-6 text-center bg-white space-y-2">
         <p className="text-gray-700">مجموع قیمت‌ها</p>
