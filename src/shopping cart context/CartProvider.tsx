@@ -50,9 +50,11 @@ export function CartProvider({ children }: ch) {
       currentItems.filter((item) => item.id !== id)
     );
   };
-  
-  const cartQTY = itemsInCart.reduce((totalQty, item) => totalQty + item.qty , 0);
-  
+
+  const cartQTY = itemsInCart.reduce(
+    (totalQty, item) => totalQty + item.qty,
+    0
+  );
 
   return (
     <cartContext.Provider

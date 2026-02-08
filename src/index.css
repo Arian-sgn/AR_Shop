@@ -1,6 +1,103 @@
 @import "tailwindcss";
-body{
-  font-family:"shabnam";
+
+/* ---------- Light Mode ---------- */
+:root {
+  /* Backgrounds */
+  --bg: #f8fafc; /* کل سایت */
+  --surface: #0f172a; /* کارت‌ها، navbar */
+
+  /* Text */
+  --text: #0f172a; /* متن اصلی */
+  --text-muted: #64748b; /* توضیحات، subtitle */
+
+  /* Borders */
+  --border: #00000035;
+
+  /* Accent */
+  --primary: #0ea5e9;
+  --primary-soft: #e0f2fe;
+  --shadow: #202020;
+
+  /* shadows */
+  --shadow-sm: 0 1px 6px rgba(0, 0, 0, 0.567);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.69);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+  /*ring*/
+  --ring: rgba(0, 0, 0, 0.09);
+  /*dmb*/
+  --darkmodebottun: #061f30;
+  --a: #061f30;
+  --buy-button: #00dd1e;
+  --nb:#949494;
+  --shop-image: url("/src/assets/Online Shopping Concept.jpg");
+}
+
+/* ---------- Dark Mode ---------- */
+.dark {
+  /* Backgrounds */
+  --bg: #020617;
+  --surface: #cffaff;
+
+  /* Text */
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  /* Borders */
+  --border: #05337d;
+
+  /* Accent */
+  --primary: #38bdf8;
+  --primary-soft: #061f30;
+  --shadow: #00c0ff;
+
+  /* shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 195, 255);
+  --shadow-md: 0 4px 10px rgb(0, 195, 255);
+  --shadow-lg: 0 20px 40px rgba(0, 195, 255);
+  /*ring*/
+  --ring: rgb(0, 195, 255);
+  /*dmb*/
+  --darkmodebottun: #e0f2fe;
+  --a: #e0f2fe;
+  --buy-button: #00c0ff;
+  --pms-b: #06253c;
+  --nb:#a5a5a5;
+  --shop-image: url("/src/assets/vecteezy_online-shopping-on-phone-buy-sell-business-digital-web_8247806.jpg");
+}
+
+.btn-cart {
+  @apply px-3 py-1 border rounded-lg
+   hover:bg-green-50 dark:hover:bg-slate-800 transition;
+}
+
+* {
+  @apply transition-all duration-200;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("/fonts/Shabnam.ttf") format("truetype");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shabnam-bold";
+  src: url("/fonts/Shabnam-Bold.ttf") format("truetype");
+  font-weight: 800; /* extrabold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("/fonts/Shabnam-Bold.ttf") format("truetype");
+  font-weight: 700; /* font-bold */
+  font-style: normal;
+}
+
+body {
+  font-family: "Shabnam", "sans-serif";
 }
 :root {
   color-scheme: light dark;
@@ -26,12 +123,4 @@ button {
   /* font-weight: 500; */
   cursor: pointer;
   /* transition: border-color 0.25s; */
-}
-
-
-*{
-  @font-face {
-    font-family:"shabnam.ttf" ;
-    src: url("/assets/Shabnam.ttf");
-  }
 }

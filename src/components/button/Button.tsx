@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 type Tvariant = "danger" | "success" | "primery" | "warning";
 type Tbutton = ComponentProps<"button"> & { variant?: Tvariant };

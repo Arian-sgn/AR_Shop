@@ -2,28 +2,36 @@ import type { mpt } from "../../types/Types";
 
 export default function Products({ title, image, description, price }: mpt) {
   return (
-    <article className="h-96 flex flex-col text-right rounded-3xl border border-gray-200 bg-white shadow-md overflow-hidden">
-      <div className="w-full aspect-3/4 bg-gray-100 h-1/2">
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border-(--border) ring-1 ring-(--ring) shadow-(--shadow-md) hover:shadow-(--shadow-sm) transition-all duration-300 hover:-translate-y-1">
+      {/* بخش تصویر */}
+      <div className="relative aspect-3/4 w-full overflow-hidden p-4 bg-(--pms-b)">
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-contain"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
       </div>
 
-      <div className="flex flex-col gap-2 p-3">
-        <header className="flex flex-row-reverse items-center justify-between border-b border-gray-200 pb-2">
-          <h2 className="text-sm font-semibold line-clamp-2">{title}</h2>
+      {/* بخش توضیحات */}
+      <div className="flex flex-1 flex-col justify-between gap-3 p-4" dir="rtl">
+        <div>
+          <header className="mb-2 flex items-start justify-between gap-2">
+            <h2 className="line-clamp-2 text-sm font-bold text-(--text) sm:text-base">
+              {title}
+            </h2>
+          </header>
+          
+          <p className="line-clamp-3 text-xs leading-relaxed text-(--text-muted) sm:text-sm">
+            {description}
+          </p>
+        </div>
 
-          <span className="text-xs font-bold text-emerald-700 whitespace-nowrap">
-            {price.toLocaleString("fa-IR")} تومان
+        <div className="mt-2 flex items-center justify-end border-t border-(--a) pt-3">
+          <span className="text-sm font-bold text-(--primary) sm:text-base">
+            {price.toLocaleString("fa-IR")} <span className="text-sm font-normal text-(--a)">تومان</span>
           </span>
-        </header>
-
-        <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
-          {description}
-        </p>
+        </div>
       </div>
     </article>
   );
