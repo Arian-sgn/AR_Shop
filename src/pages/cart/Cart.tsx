@@ -3,7 +3,7 @@ import ProductInCart from "../../components/productInCart/ProductInCart";
 import { useCart } from "../../shopping cart context/useCart";
 import type { mpt } from "../../types/Types";
 import { getProducts } from "../../services/api";
-import Container from "../../components/Container"; // اضافه کردن Container
+import Container from "../../components/Container"; 
 
 function Cart() {
   const { itemsInCart } = useCart();
@@ -42,7 +42,6 @@ function Cart() {
     <Container>
       <div className="mt-8 flex flex-col gap-4 pb-20">
         
-        {/* لیست محصولات */}
         <div className="flex flex-col gap-4">
           {itemsInCart.map((cartItem) => {
             const productData = products.find((p) => p.id === cartItem.id);
@@ -58,7 +57,6 @@ function Cart() {
           })}
         </div>
 
-        {/* فاکتور نهایی */}
         <div className="mx-auto mt-6 w-full max-w-lg rounded-xl bg-(--primary-soft) p-6 shadow-md ring-2 ring-(--surface)">
           <div className="flex flex-col space-y-4">
             <div className="flex justify-between text-lg">

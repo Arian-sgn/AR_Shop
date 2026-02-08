@@ -3,10 +3,9 @@ import type { mpt } from "../types/Types";
 import Products from "./products/Products";
 
 function SimpleProductSlider({ products }: { products: mpt[] }) {
-  // استفاده از Ref برای دسترسی به کانتینر اسکرول
+
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // تابع اسکرول به چپ و راست
   const scroll = (offset: number) => {
     if (sliderRef.current) {
       sliderRef.current.scrollBy({ left: offset, behavior: "smooth" });
@@ -16,10 +15,8 @@ function SimpleProductSlider({ products }: { products: mpt[] }) {
   return (
     <div className="relative w-full mb-10">
       
-      {/* کادر دور اسلایدر - ارتفاع را برداشتیم تا بر اساس محتوا تنظیم شود */}
       <div className="relative rounded-3xl ring-4 ring-[#00c0ff] p-4 md:p-4 bg-(--bg)">
         
-        {/* دکمه قبلی (فقط در دسکتاپ نمایش داده می‌شود) */}
         <button
           onClick={() => scroll(-320)}
           className="hidden md:flex absolute left-4 top-1/2 z-10 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-(--surface) text-(--primary-soft) shadow-lg ring-1 ring-[#00c0ff] transition hover:scale-110 active:scale-95"
@@ -30,7 +27,6 @@ function SimpleProductSlider({ products }: { products: mpt[] }) {
           </svg>
         </button>
 
-        {/* دکمه بعدی (فقط در دسکتاپ نمایش داده می‌شود) */}
         <button
           onClick={() => scroll(320)}
           className="hidden md:flex absolute right-4 top-1/2 z-10 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-(--surface) text-(--primary-soft) shadow-lg ring-1 ring-[#00c0ff] transition hover:scale-110 active:scale-95"
@@ -41,18 +37,15 @@ function SimpleProductSlider({ products }: { products: mpt[] }) {
           </svg>
         </button>
 
-        {/* کانتینر محصولات (با قابلیت اسکرول و Snap) */}
         <div
           ref={sliderRef}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} // مخفی کردن اسکرول‌بار
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {products.map((item) => (
             <div
               key={item.id}
-              // تنظیم عرض‌ها:
-              // در موبایل: 85% عرض صفحه (تا کاربر بفهمد ادامه دارد)
-              // در تبلت: حدود 300 پیکسل
+             
               className="min-w-[60%] snap-center sm:min-w-[40%] md:min-w-[300px]"
             >
               

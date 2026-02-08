@@ -5,8 +5,7 @@ import type { mpt } from "../../types/Types";
 import { getProducts } from "../../services/api";
 import SimpleProductSlider from "../../components/SimpleProductSlider";
 import useTheme from "../../theme/UseTheme";
-// import lightimg from "../../assets/aaa.svg";
-// import darkimg from "../../assets/online shopping.jpg";
+
 
 function Home() {
   const [products, setProducts] = useState<mpt[]>([]);
@@ -25,10 +24,8 @@ function Home() {
 
   return (
     <Container>
-      {/* --- Hero Section --- */}
       <section className="flex flex-col-reverse items-center gap-8 py-10 lg:flex-row lg:justify-between lg:gap-16 lg:py-20">
         
-        {/* Text Content */}
         <div className="flex flex-1 flex-col items-center gap-6 text-center lg:items-end lg:text-right">
           <h1 className="text-3xl font-black leading-tight text-(--text) sm:text-4xl md:text-5xl lg:text-6xl">
             خرید هوشمندانه
@@ -60,11 +57,8 @@ function Home() {
           </div>
         </div>
 
-        {/* Illustration Image */}
         <div className="flex w-full flex-1 justify-center lg:justify-start">
           <div className="relative w-full max-w-md lg:max-w-full">
-            {/* Background Blob Effect (Optional visual enhancement) */}
-            <div className="absolute -inset-4 rounded-full"></div>
             
             <img
               src={theme === "light" ? "/aaa.svg" : "/online shopping.jpg"}
@@ -77,7 +71,6 @@ function Home() {
         </div>
       </section>
 
-      {/* --- Features Section --- */}
       <section className="py-12">
         <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {[
@@ -100,7 +93,6 @@ function Home() {
         </div>
       </section>
 
-      {/* --- Product Slider Section --- */}
       <section className="my-12 flex flex-col items-center justify-center gap-6">
         <div className="flex w-full items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-700" dir="rtl">
            <h2 className="text-xl font-bold text-(--text) sm:text-2xl">جدیدترین محصولات</h2>
@@ -123,7 +115,6 @@ function Home() {
         )}
       </section>
 
-      {/* --- CTA (Call to Action) --- */}
       <section className="relative mb-20 overflow-hidden rounded-3xl bg-linear-to-r from-blue-600 to-[#00c0ff] px-6 py-12 text-center text-white shadow-xl sm:px-12 md:py-16">        
 
         <div className="relative z-10 flex flex-col items-center gap-4">

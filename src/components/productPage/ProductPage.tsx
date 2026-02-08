@@ -36,7 +36,6 @@ function ProductPage() {
     <Container>
       <section className="mt-8 grid grid-cols-1 gap-8 pb-20 text-right md:mt-20 md:grid-cols-12">
         
-        {/* Image Section */}
         <div className="order-1 col-span-1 md:col-span-4 md:order-1">
           <div className="overflow-hidden rounded-xl bg-(--primary-soft) shadow-(--shadow-md) ring-1 ring-(--ring)">
             <img
@@ -48,7 +47,6 @@ function ProductPage() {
           </div>
         </div>
 
-        {/* Content Section */}
         <div className="order-2 flex flex-col gap-6 md:col-span-8 md:order-2">
           <header className="border-b border-(--surface) pb-4">
             <h1 className="text-xl font-bold leading-tight text-(--a) sm:text-2xl md:text-3xl">
@@ -58,12 +56,10 @@ function ProductPage() {
 
           <div className="flex flex-col-reverse gap-6 lg:grid lg:grid-cols-12">
             
-            {/* Description */}
             <article className="rounded-xl bg-(--primary-soft) p-4 text-sm leading-relaxed text-(--text-muted) shadow-(--shadow-sm) ring-1 ring-(--ring) lg:col-span-8">
               {prd.description}
             </article>
 
-            {/* Sidebar / Cart Actions */}
             <aside className="flex flex-col justify-between rounded-xl bg-(--primary-soft) p-4 shadow-(--shadow-sm) ring-1 ring-(--ring) lg:col-span-4">
               <div className="mb-4 text-center">
                 <span className="block text-xl font-bold text-(--buy-button)">
@@ -82,7 +78,6 @@ function ProductPage() {
                 <div className="flex flex-col items-center">
                   <div className="mt-4 flex flex-row-reverse w-full items-center justify-between rounded-lg bg-(--primary-soft) px-2 py-2 text-xl shadow-lg ring-2 ring-(--nb)">
                     
-                    {/* Increase Button */}
                     <Button
                       onClick={() => IncreaseItemQTY(productId)}
                       className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-100"
@@ -94,7 +89,6 @@ function ProductPage() {
 
                     <span className="font-bold">{qty}</span>
 
-                    {/* Decrease/Trash Button */}
                     {qty === 1 ? (
                       <Button
                         onClick={() => Trash(productId)}

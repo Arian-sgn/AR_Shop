@@ -22,7 +22,6 @@ function Store() {
 
   return (
     <Container>
-      {/* Header & Search Section */}
       <div className="flex flex-col gap-6 py-8" dir="rtl">
         <h1
           className="bg-linear-to-r from-blue-500 via-[#00c0ff] to-blue-600 bg-clip-text pb-1 animate-pulse text-right text-sm font-black text-transparent sm:text-4xl md:text-5xl lg:text-6xl"
@@ -47,7 +46,6 @@ function Store() {
         </div>
       )}
 
-      {/* Empty State */}
       {!loading && filteredProducts.length === 0 && (
         <div className="flex min-h-[40vh] flex-col items-center justify-center px-4 text-center">
           <div className="text-6xl mb-4">😕</div>
@@ -60,7 +58,6 @@ function Store() {
         </div>
       )}
 
-      {/* Products Grid */}
       {!loading && filteredProducts.length > 0 && (
         <div className="grid grid-cols-2 gap-4 pb-20 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:gap-8">
           {filteredProducts.map((item) => (
