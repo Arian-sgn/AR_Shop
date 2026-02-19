@@ -52,33 +52,34 @@ function Store() {
         )}
 
         {/* دسته‌بندی‌ها */}
-        <div className="flex flex-col items-end gap-2 md:gap-4 ring-1 ring-(--ring) rounded-2xl p-3 md:p-6 ">
-          <span className="font-extrabold text-lg text-(--primary)"> دسته بندی ها</span>
-          <div className="flex gap-1 md:gap-4 flex-row-reverse">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`px-3 md:px-12 md:py-2 rounded-full text-xs md:text-sm text-(--primary-soft)
-               cursor-pointer transition-all font-bold hover:bg-(--primary) ${
-                !selectedCategory ? "bg-(--primary)" : "bg-(--surface)"
-               }`}
-            >
-              همه
-            </button>
+        <div className="w-full rounded-2xl ring-1 ring-(--ring) p-4 md:p-6">
+          <div className="flex flex-col gap-5">
+            <h2 className="text-base md:text-lg font-bold text-(--primary)">
+              دسته بندی ها
+            </h2>
 
-            {categories.map((c) => (
+            <div className="flex gap-2 md:gap-3 overflow-x-auto scrollbar-hide">
               <button
-                key={c}
-                onClick={() =>
-                  setSelectedCategory(selectedCategory === c ? null : c)
-                }
-                className={`px-1 md:px-4 py-1 rounded-3xl md:rounded-full md:text-sm
-                 cursor-pointer transition-all font-extralight md:font-black hover:bg-(--primary) ${
-                   selectedCategory === c && "bg-(--primary)"
-                 }`}
+                onClick={() => setSelectedCategory(null)}
+                className={`text-(--primary-soft) shrink-0 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all
+                ${!selectedCategory ? "bg-(--primary)" : "bg-(--surface)"}`}
               >
-                {c}
+                همه
               </button>
-            ))}
+
+              {categories.map((c) => (
+                <button
+                  key={c}
+                  onClick={() =>
+                    setSelectedCategory(selectedCategory === c ? null : c)
+                  }
+                  className={`text-(--primary-soft) shrink-0 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all
+                  ${selectedCategory === c ? "bg-(--primary)" : "bg-(--surface)"}`}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
