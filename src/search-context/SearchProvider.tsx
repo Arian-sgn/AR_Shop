@@ -9,6 +9,7 @@ export type SearchContextType = {
   setProducts: (p: mpt[]) => void;
   open: boolean;
   setOpen: (v: boolean) => void;
+  products: mpt[];
 };
 
 export function SearchProvider({ children }: { children: React.ReactNode }) {
@@ -34,6 +35,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
         setSearch,
         filteredProducts,
         setProducts,
+        products,
         open,
         setOpen,
       }}

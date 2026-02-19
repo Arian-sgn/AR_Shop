@@ -1,6 +1,7 @@
 import type { mpt } from "../../types/Types";
 
 export default function Products({ title, image, description, price }: mpt) {
+  
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border-(--border) ring-1 ring-(--ring) shadow-(--shadow-md) hover:shadow-(--shadow-sm) transition-all duration-300 hover:-translate-y-1">
       {/* بخش تصویر */}

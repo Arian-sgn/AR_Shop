@@ -13,14 +13,14 @@ function SearchBar() {
         setOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [setOpen]); // added dep
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [setOpen]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearch(inputValue.trim());
-    }, 300);
+    }, 400);
     return () => clearTimeout(timer);
   }, [inputValue, setSearch]);
 
@@ -33,7 +33,7 @@ function SearchBar() {
           setInputValue(e.target.value);
           setOpen(true);
         }}
-        placeholder="...جستجوی محصولات"
+        placeholder= "جستجوی محصولات..."
         className=" w-full rounded-full px-5 py-2.5 text-base text-(--text) ring-2 ring-(--primary) transition-all focus:outline-none focus:ring-4 focus:ring-(--primary)/50"
         dir="rtl"
       />
@@ -45,8 +45,7 @@ function SearchBar() {
               {filteredProducts.slice(0, 5).map((p) => (
                 <Link
                   key={p.id}
-                  to={`/Product/${p.id}`}
-                  onClick={() => setOpen(false)}
+                  to={`/product/${p.id}`}
                   className="flex items-center gap-4 px-4 py-3 transition-colors hover:bg-gray-100 dark:hover:bg-white/5"
                 >
                   <div className="h-12 w-12 shrink-0 overflow-hidden rounded-md bg-white p-1">
@@ -60,7 +59,7 @@ function SearchBar() {
               ))}
             </div>
           ) : (
-            <div className="px-4 py-6 text-center text-sm text-">
+            <div className="px-4 py-6 text-center text-sm">
               محصولی با این نام یافت نشد
             </div>
           )}

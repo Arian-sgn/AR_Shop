@@ -4,7 +4,6 @@ import { getProduct } from "../../services/api";
 import { useCart } from "../../shopping cart context/useCart";
 import type { mpt } from "../../types/Types";
 
-// 1. تعریف ساده و صریح پراپ‌ها (بدون ارث‌بری پیچیده)
 interface ProductInCartProps {
   id: number;
   qty: number;
