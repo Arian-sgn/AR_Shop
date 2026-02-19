@@ -52,12 +52,12 @@ function Store() {
         )}
 
         {/* دسته‌بندی‌ها */}
-        <div className="flex flex-col items-end gap-4 ring-1 ring-(--ring) rounded-2xl p-6">
+        <div className="flex flex-col items-end gap-2 md:gap-4 ring-1 ring-(--ring) rounded-2xl p-3 md:p-6 ">
           <span className="font-extrabold text-lg text-(--primary)"> دسته بندی ها</span>
-          <div className="flex gap-4 flex-row-reverse">
+          <div className="flex gap-1 md:gap-4 flex-row-reverse">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`px-12 py-1 rounded-full text-sm text-(--primary-soft)
+              className={`px-3 md:px-12 md:py-2 rounded-full text-xs md:text-sm text-(--primary-soft)
                cursor-pointer transition-all font-bold hover:bg-(--primary) ${
                 !selectedCategory ? "bg-(--primary)" : "bg-(--surface)"
                }`}
@@ -71,8 +71,8 @@ function Store() {
                 onClick={() =>
                   setSelectedCategory(selectedCategory === c ? null : c)
                 }
-                className={` px-3 py-1 rounded-full text-sm
-                 cursor-pointer transition-all font-black hover:bg-(--primary) ${
+                className={`px-1 md:px-4 py-1 rounded-3xl md:rounded-full md:text-sm
+                 cursor-pointer transition-all font-extralight md:font-black hover:bg-(--primary) ${
                    selectedCategory === c && "bg-(--primary)"
                  }`}
               >
